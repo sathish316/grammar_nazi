@@ -8,7 +8,12 @@ class GrammarValidator
     preceding_words.each do |preceding_word|
       succeeding_words = bigram_counter.after(preceding_word)
       succeeding_words.each do |succeeding_word, count|
-        Bigram.create(preceding_word: preceding_word, succeeding_word: succeeding_word, count: count)
+        bigram = Bigram.first(preceding_word: preceding_word, succeeding_word: succeeding_word)
+        if bigram
+          bigram.update(count: count + bigram.count)
+        else
+          Bigram.create(preceding_word: preceding_word, succeeding_word: succeeding_word, count: count)
+        end
       end
     end
   end
