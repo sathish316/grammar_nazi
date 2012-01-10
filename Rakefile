@@ -12,3 +12,9 @@ task "grammar:learn", :file do |task, args|
   validator = GrammarValidator.new
   validator.learn(args[:file], ["its", "it's"])
 end
+
+desc "Validate sentence from known grammatical rules"
+task "grammar:validate", :sentence do |task, args|
+  validator = GrammarValidator.new
+  puts validator.validate(args[:sentence])
+end
