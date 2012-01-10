@@ -1,1 +1,1 @@
-Grammar Nazi is a machine learning library that detects common grammatical errors listed in the wikipedia article: http://en.wikipedia.org/wiki/Wikipedia:Common_grammatical_errors
+Grammar Nazi is a machine learning library that detects common grammatical errors like it's vs its, let's vs lets etc.
